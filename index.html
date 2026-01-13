@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IndieStream - India's Video Platform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+</head>
+<body>
+    <!-- Top Navigation -->
+    <nav class="top-nav">
+        <div class="nav-left">
+            <button class="menu-btn" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="logo">
+                <i class="fas fa-play-circle text-primary"></i>
+                <span class="logo-text">IndieStream</span>
+                <sup class="badge-india">🇮🇳</sup>
+            </div>
+        </div>
+        
+        <div class="nav-center">
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search Indian videos, creators, topics...">
+                <button class="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="voice-search-btn">
+                    <i class="fas fa-microphone"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div class="nav-right">
+            <button class="nav-icon" title="Create">
+                <i class="fas fa-video"></i>
+            </button>
+            <button class="nav-icon" title="Notifications">
+                <i class="fas fa-bell"></i>
+                <span class="notification-badge">3</span>
+            </button>
+            <button class="nav-icon user-avatar" id="userMenuBtn">
+                <img src="https://ui-avatars.com/api/?name=Indian+User&background=4B0082&color=fff" alt="User">
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-section">
+                <a href="#" class="sidebar-item active">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="#" class="sidebar-item">
+                    <i class="fas fa-fire"></i>
+                    <span>Trending</span>
+                </a>
+                <a href="#" class="sidebar-item">
+                    <i class="fas fa-compass"></i>
+                    <span>Explore</span>
+                </a>
+                <a href="#" class="sidebar-item">
+                    <i class="fas fa-film"></i>
+                    <span>Shorts</span>
+                </a>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Subscriptions</h3>
+                <a href="#" class="sidebar-item">
+                    <img src="https://ui-avatars.com/api/?name=Travel+India&background=FF9933&color=fff" class="channel-avatar">
+                    <span>Travel India</span>
+                </a>
+                <a href="#" class="sidebar-item">
+                    <img src="https://ui-avatars.com/api/?name=Food+Street&background=138808&color=fff" class="channel-avatar">
+                    <span>Food Street</span>
+                </a>
+                <a href="#" class="sidebar-item">
+                    <img src="https://ui-avatars.com/api/?name=Tech+Guru&background=4B0082&color=fff" class="channel-avatar">
+                    <span>Tech Guru</span>
+                </a>
+                <a href="#" class="sidebar-item">
+                    <img src="https://ui-avatars.com/api/?name=Music+Masti&background=FF66CC&color=fff" class="channel-avatar">
+                    <span>Music Masti</span>
+                </a>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Indian Categories</h3>
+                <a href="#" class="sidebar-item">
+                    <i class="fas fa-utensils"></i>
+                    <span>Food & Cooking</span>
+                </a>
+                <a href="#" class="sidebar-item">
+                    <i class="fas fa-music"></i>
+                    <span>Music & Dance</span>
+                </a>
+                <a href="#" class="sidebar-item">
+                    <i class="fas fa-landmark"></i>
+                    <span>Culture & Heritage</span>
+                </a>
+                <a href="#" class="sidebar-item">
+                    <i class="fas fa-laptop-code"></i>
+                    <span>Tech & Startups</span>
+                </a>
+                <a href="#" class="sidebar-item">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Education</span>
+                </a>
+                <a href="#" class="sidebar-item">
+                    <i class="fas fa-cricket"></i>
+                    <span>Sports</span>
+                </a>
+            </div>
+            
+            <div class="sidebar-footer">
+                <p class="small-text">
+                    <i class="fas fa-shield-alt"></i>
+                    <strong>Safe & Indian</strong><br>
+                    Content moderated for Indian values
+                </p>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Category Filters -->
+            <div class="category-filters">
+                <button class="filter-btn active">All</button>
+                <button class="filter-btn">Music</button>
+                <button class="filter-btn">Gaming</button>
+                <button class="filter-btn">News</button>
+                <button class="filter-btn">Cooking</button>
+                <button class="filter-btn">Tech</button>
+                <button class="filter-btn">Comedy</button>
+                <button class="filter-btn">Sports</button>
+                <button class="filter-btn">Learning</button>
+                <button class="filter-btn">Recently uploaded</button>
+                <button class="filter-btn">New to you</button>
+            </div>
+
+            <!-- Videos Grid -->
+            <div class="videos-grid" id="videosGrid">
+                <!-- Videos will be loaded here by JavaScript -->
+            </div>
+
+            <!-- Featured Section -->
+            <section class="featured-section">
+                <h2 class="section-title">
+                    <i class="fas fa-star text-primary"></i>
+                    Featured Indian Creators
+                </h2>
+                <div class="creators-grid">
+                    <div class="creator-card">
+                        <div class="creator-avatar">
+                            <img src="https://ui-avatars.com/api/?name=Raj+Sharma&background=4B0082&color=fff&size=100" alt="Raj Sharma">
+                            <span class="verified-badge"><i class="fas fa-check-circle"></i></span>
+                        </div>
+                        <h4>Raj Sharma</h4>
+                        <p class="creator-category">Tech Reviews</p>
+                        <p class="subscribers">2.5M subscribers</p>
+                        <button class="subscribe-btn">Subscribe</button>
+                    </div>
+                    
+                    <div class="creator-card">
+                        <div class="creator-avatar">
+                            <img src="https://ui-avatars.com/api/?name=Priya+Patel&background=FF9933&color=fff&size=100" alt="Priya Patel">
+                            <span class="verified-badge"><i class="fas fa-check-circle"></i></span>
+                        </div>
+                        <h4>Priya Patel</h4>
+                        <p class="creator-category">Food & Cooking</p>
+                        <p class="subscribers">3.1M subscribers</p>
+                        <button class="subscribe-btn subscribed">Subscribed</button>
+                    </div>
+                    
+                    <div class="creator-card">
+                        <div class="creator-avatar">
+                            <img src="https://ui-avatars.com/api/?name=Amit+Kumar&background=138808&color=fff&size=100" alt="Amit Kumar">
+                        </div>
+                        <h4>Amit Kumar</h4>
+                        <p class="creator-category">Music Covers</p>
+                        <p class="subscribers">1.8M subscribers</p>
+                        <button class="subscribe-btn">Subscribe</button>
+                    </div>
+                    
+                    <div class="creator-card">
+                        <div class="creator-avatar">
+                            <img src="https://ui-avatars.com/api/?name=Neha+Singh&background=FF66CC&color=fff&size=100" alt="Neha Singh">
+                            <span class="verified-badge"><i class="fas fa-check-circle"></i></span>
+                        </div>
+                        <h4>Neha Singh</h4>
+                        <p class="creator-category">Travel Vlogs</p>
+                        <p class="subscribers">4.2M subscribers</p>
+                        <button class="subscribe-btn">Subscribe</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Trending Shorts -->
+            <section class="shorts-section">
+                <div class="shorts-header">
+                    <h2 class="section-title">
+                        <i class="fas fa-bolt text-warning"></i>
+                        Indian Shorts
+                    </h2>
+                    <a href="#" class="view-all">View all</a>
+                </div>
+                <div class="shorts-grid">
+                    <div class="short-card">
+                        <div class="short-thumbnail">
+                            <img src="https://picsum.photos/200/350?random=1" alt="Short">
+                            <div class="short-duration">0:45</div>
+                        </div>
+                        <h4>Amazing Street Food!</h4>
+                        <p class="short-views">2.1M views</p>
+                    </div>
+                    
+                    <div class="short-card">
+                        <div class="short-thumbnail">
+                            <img src="https://picsum.photos/200/350?random=2" alt="Short">
+                            <div class="short-duration">0:52</div>
+                        </div>
+                        <h4>Quick Yoga Tips</h4>
+                        <p class="short-views">1.8M views</p>
+                    </div>
+                    
+                    <div class="short-card">
+                        <div class="short-thumbnail">
+                            <img src="https://picsum.photos/200/350?random=3" alt="Short">
+                            <div class="short-duration">0:38</div>
+                        </div>
+                        <h4>DIY Home Decor</h4>
+                        <p class="short-views">3.4M views</p>
+                    </div>
+                    
+                    <div class="short-card">
+                        <div class="short-thumbnail">
+                            <img src="https://picsum.photos/200/350?random=4" alt="Short">
+                            <div class="short-duration">0:41</div>
+                        </div>
+                        <h4>Cricket Skills</h4>
+                        <p class="short-views">2.9M views</p>
+                    </div>
+                    
+                    <div class="short-card">
+                        <div class="short-thumbnail">
+                            <img src="https://picsum.photos/200/350?random=5" alt="Short">
+                            <div class="short-duration">0:59</div>
+                        </div>
+                        <h4>Quick Recipe</h4>
+                        <p class="short-views">1.5M views</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Video Player Modal -->
+    <div class="video-modal" id="videoModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close-modal" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="video-player" id="videoPlayer">
+                    <!-- Video will be loaded here -->
+                </div>
+                <div class="video-details" id="videoDetails">
+                    <!-- Video details will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- User Menu -->
+    <div class="user-menu" id="userMenu">
+        <div class="user-info">
+            <img src="https://ui-avatars.com/api/?name=Indian+User&background=4B0082&color=fff&size=80" alt="User">
+            <h4>Indian User</h4>
+            <p class="user-email">user@indiestream.in</p>
+        </div>
+        <div class="menu-items">
+            <a href="#" class="menu-item">
+                <i class="fas fa-user-circle"></i>
+                <span>Your Channel</span>
+            </a>
+            <a href="#" class="menu-item">
+                <i class="fas fa-history"></i>
+                <span>History</span>
+            </a>
+            <a href="#" class="menu-item">
+                <i class="fas fa-play-circle"></i>
+                <span>Your Videos</span>
+            </a>
+            <a href="#" class="menu-item">
+                <i class="fas fa-clock"></i>
+                <span>Watch Later</span>
+            </a>
+            <a href="#" class="menu-item">
+                <i class="fas fa-download"></i>
+                <span>Downloads</span>
+            </a>
+            <hr>
+            <a href="#" class="menu-item">
+                <i class="fas fa-cog"></i>
+                <span>Settings</span>
+            </a>
+            <a href="#" class="menu-item">
+                <i class="fas fa-flag"></i>
+                <span>Indian Content Policy</span>
+            </a>
+            <a href="#" class="menu-item">
+                <i class="fas fa-shield-alt"></i>
+                <span>Safety & Moderation</span>
+            </a>
+            <hr>
+            <a href="#" class="menu-item">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Switch Account</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <i class="fas fa-play-circle"></i>
+                <span>IndieStream</span>
+                <sup class="badge-india">🇮🇳</sup>
+            </div>
+            <p class="footer-tagline">India's Own Video Platform - Safe, Cultural, Authentic</p>
+            
+            <div class="footer-links">
+                <a href="#">About</a>
+                <a href="#">Press</a>
+                <a href="#">Copyright</a>
+                <a href="#">Contact us</a>
+                <a href="#">Creators</a>
+                <a href="#">Advertise</a>
+                <a href="#">Developers</a>
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Safety</a>
+            </div>
+            
+            <div class="footer-info">
+                <p>
+                    <i class="fas fa-map-marker-alt"></i>
+                    Made with ❤️ in India
+                </p>
+                <p class="copyright">
+                    © 2024 IndieStream Inc. | Academic Project
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
